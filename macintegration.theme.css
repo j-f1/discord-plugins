@@ -15,16 +15,16 @@ Key:
 .header-2V-4Sw: server name header
 .container-1r6BKw: main title bar/toolbar with channel name
 .macButtons-2MuSAC: window buttons
-.iconWrapper-2OrFZ1: hashtag icon for channel name in title bar
 .guilds-1SWlCJ: servers sidebar
 .item-3HknzM.themed-OHr7kt: online/all/pending/blocked tabs
-.children-19S4PO: gradient at end of long channel descriptions
+.children-19S4PO: wraps channel title
 .scroller-2TZvBN: server list scroll view
 .strikethrough-*: red slash across icon
 .sidebar-2K8pFh: channel list
 .topControls-KKImPZ: wraps top bar in voice channel
 .iconWrapper-2OrFZ1: icon buttons in toolbar
 .content-yTz4x3: main text channel content
+.toolbar-1t6TWx: toolbar buttons in title bar
 */
 
 /* shrink title bar to match native toolbars */
@@ -41,8 +41,7 @@ Key:
   left: 2px;
 }
 
-.iconWrapper-2OrFZ1,
-.iconWrapper-2OrFZ1 svg {
+.children-19S4PO .iconWrapper-2OrFZ1 svg {
   height: 20px;
   margin: 0;
   margin-right: 2px;
@@ -112,13 +111,13 @@ Key:
 }
 
 /* highlight icons on hover */
-.iconWrapper-2OrFZ1 {
+.toolbar-1t6TWx .iconWrapper-2OrFZ1 {
   padding: 3px;
   margin: 0 4px;
   height: 30px;
   border-radius: 5px;
 }
-.iconWrapper-2OrFZ1:hover {
+.toolbar-1t6TWx .iconWrapper-2OrFZ1:hover {
   background: var(--background-modifier-selected);
 }
 
