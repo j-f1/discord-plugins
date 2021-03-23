@@ -9,45 +9,65 @@
  * @source https://raw.githubusercontent.com/j-f1/discord-plugins/main/macintegration.theme.css
  */
 
+/*
+Key:
+.searchBar-6Kv8R2: "Find or start a conversation" on homepage
+.header-2V-4Sw: server name header
+.container-1r6BKw: main title bar/toolbar with channel name
+.macButtons-2MuSAC: window buttons
+.iconWrapper-2OrFZ1: hashtag icon for channel name in title bar
+.guilds-1SWlCJ: servers sidebar
+.item-3HknzM.themed-OHr7kt: online/all/pending/blocked tabs
+.children-19S4PO: gradient at end of long channel descriptions
+.scroller-2TZvBN: server list scroll view
+.strikethrough-*: red slash across icon
+.sidebar-2K8pFh: channel list
+.topControls-KKImPZ: wraps top bar in voice channel
+.iconWrapper-2OrFZ1: icon buttons in toolbar
+.content-yTz4x3: main text channel content
+*/
+
 /* shrink title bar to match native toolbars */
-section.da-container,
-.da-searchBar:not([role]),
-.da-macButtons,
-header.da-header {
+.container-1r6BKw,
+.searchBar-6Kv8R2,
+.macButtons-2MuSAC,
+.header-2V-4Sw {
   height: 38px;
 }
-[aria-label="Servers sidebar"] {
+.guilds-1SWlCJ {
   margin-top: 38px !important;
 }
+.typeMacOS-3EmCyP.titleBar-AC4pGV {
+  left: 2px;
+}
 
-[aria-label="Text Channel"],
-[aria-label="Text Channel"] .da-icon {
+.iconWrapper-2OrFZ1,
+.iconWrapper-2OrFZ1 svg {
   height: 20px;
   margin: 0;
   margin-right: 2px;
 }
 
-.da-title ~ .da-tabBar .da-item.da-themed {
+/* friends tab bar */
+.item-3HknzM.themed-OHr7kt {
   margin: 0 4px;
 }
 
 /* dim/grayscale UI elements when window is not focused */
-section.da-container.da-themed,
-section.da-title.da-themed,
-.da-searchBar:not([role]),
-header.da-header,
-.da-headerWrapper section.da-transparent {
+.container-1r6BKw,
+.searchBar-6Kv8R2,
+.header-2V-4Sw {
   background: var(--background-secondary);
 }
 
-.theme-light:not(.app-focused) .da-children::after {
+.theme-light:not(.app-focused) .children-19S4PO::after {
   background: linear-gradient(
     90deg,
     hsla(0, 0%, 100%, 0) 0,
     var(--background-secondary)
   );
 }
-.theme-dark:not(.app-focused) .da-children::after {
+.theme-dark:not(.app-focused) .children-19S4PO::after {
   background: linear-gradient(
     90deg,
     rgba(54, 57, 63, 0) 0,
@@ -55,55 +75,55 @@ header.da-header,
   );
 }
 
-:root:not(.app-focused) [aria-label="Add Friend"],
-:root:not(.app-focused) .da-guilds .da-scroller > * {
+:root:not(.app-focused) [aria-controls="ADD_FRIEND-tab"],
+:root:not(.app-focused) .scroller-2TZvBN > * {
   filter: grayscale();
 }
-:root:not(.app-focused) .da-strikethrough {
+:root:not(.app-focused) [class^="strikethrough"] {
   color: currentColor;
   opacity: 0.75;
 }
 
-.da-searchBar:not([role]) {
+.searchBar-6Kv8R2 {
   padding: 0 5px;
 }
 
 /* make the title bar white to match Big Sur */
-.app-focused section.da-container,
-.app-focused .da-searchBar:not([role]),
-.app-focused header.da-header {
+.app-focused .container-1r6BKw,
+.app-focused .searchBar-6Kv8R2,
+.app-focused .header-2V-4Sw {
   background: var(--background-primary);
 }
 
 /* fix crossfade when switching apps */
-header.da-header {
+.header-2V-4Sw {
   transition: none;
 }
 
 /* divider between channel list and main body */
-.da-sidebar {
+.sidebar-2K8pFh {
   border-right: 1px solid var(--background-tertiary);
 }
 
 /* always show top controls in voice channel */
-.da-topControls {
+.topControls-KKImPZ {
   transform: none !important;
   opacity: 1 !important;
 }
 
 /* highlight icons on hover */
-.da-toolbar .da-iconWrapper {
+.iconWrapper-2OrFZ1 {
   padding: 3px;
   margin: 0 4px;
   height: 30px;
   border-radius: 5px;
 }
-.da-toolbar .da-iconWrapper:hover {
+.iconWrapper-2OrFZ1:hover {
   background: var(--background-modifier-selected);
 }
 
 /* make shadow consistent across title bar */
-.da-content::before {
+.content-yTz4x3::before {
   top: -38px;
   height: 38px;
 }
