@@ -1,0 +1,108 @@
+/**
+ * @name MacIntegration
+ * @version 0.0.1
+ * @description Aligns some parts of Discord's UI with the macOS HIG
+ * @author Jed Fox
+ * @authorLink https://jedfox.com
+ * @authorId 706842348239323199
+ * @website https://jedfox.com
+ */
+
+/* shrink title bar to match native toolbars */
+section.da-container,
+.da-searchBar:not([role]),
+.da-macButtons,
+header.da-header {
+  height: 38px;
+}
+[aria-label="Servers sidebar"] {
+  margin-top: 38px !important;
+}
+
+[aria-label="Text Channel"],
+[aria-label="Text Channel"] .da-icon {
+  height: 20px;
+  margin: 0;
+  margin-right: 2px;
+}
+
+.da-title ~ .da-tabBar .da-item.da-themed {
+  margin: 0 4px;
+}
+
+/* dim/grayscale UI elements when window is not focused */
+section.da-container.da-themed,
+section.da-title.da-themed,
+.da-searchBar:not([role]),
+header.da-header,
+.da-headerWrapper section.da-transparent {
+  background: var(--background-secondary);
+}
+
+.theme-light:not(.app-focused) .da-children::after {
+  background: linear-gradient(
+    90deg,
+    hsla(0, 0%, 100%, 0) 0,
+    var(--background-secondary)
+  );
+}
+.theme-dark:not(.app-focused) .da-children::after {
+  background: linear-gradient(
+    90deg,
+    rgba(54, 57, 63, 0) 0,
+    var(--background-secondary)
+  );
+}
+
+:root:not(.app-focused) [aria-label="Add Friend"],
+:root:not(.app-focused) .da-guilds .da-scroller > * {
+  filter: grayscale();
+}
+:root:not(.app-focused) .da-strikethrough {
+  color: currentColor;
+  opacity: 0.75;
+}
+
+.da-searchBar:not([role]) {
+  padding: 0 5px;
+}
+
+/* make the title bar white to match Big Sur */
+.app-focused section.da-container,
+.app-focused .da-searchBar:not([role]),
+.app-focused header.da-header {
+  background: var(--background-primary);
+}
+
+/* fix crossfade when switching apps */
+header.da-header {
+  transition: none;
+}
+
+/* divider between channel list and main body */
+.da-sidebar {
+  border-right: 1px solid var(--background-tertiary);
+}
+
+/* always show top controls in voice channel */
+.da-topControls {
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* highlight icons on hover */
+.da-toolbar .da-iconWrapper {
+  padding: 3px;
+  margin: 0 4px;
+  height: 30px;
+  border-radius: 5px;
+}
+.da-toolbar .da-iconWrapper:hover {
+  background: var(--background-modifier-selected);
+}
+
+/* make shadow consistent across title bar */
+.da-content::before {
+  top: -38px;
+  height: 38px;
+}
