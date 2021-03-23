@@ -54,7 +54,7 @@ Key:
 }
 
 /* dim/grayscale UI elements when window is not focused */
-.container-1r6BKw,
+.container-1r6BKw.container-1r6BKw,
 .searchBar-6Kv8R2,
 .header-2V-4Sw {
   background: var(--background-secondary);
@@ -89,7 +89,7 @@ Key:
 }
 
 /* make the title bar white to match Big Sur */
-.app-focused .container-1r6BKw,
+.app-focused .container-1r6BKw.container-1r6BKw,
 .app-focused .searchBar-6Kv8R2,
 .app-focused .header-2V-4Sw {
   background: var(--background-primary);
