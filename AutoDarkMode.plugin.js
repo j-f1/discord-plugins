@@ -13,9 +13,14 @@ module.exports = ((_) => {
   const config = {
     info: {
       name: "AutoDarkMode",
-      author: "Jed Fox",
       version: "1.0.0",
-      description: "Auto Dark Mode",
+      description: "Automatically toggle dark theme based on system setting",
+      author: "Jed Fox",
+      authorLink: "https://jedfox.com",
+      authorId: "706842348239323199",
+      website: "https://jedfox.com",
+      source:
+        "https://raw.githubusercontent.com/j-f1/discord-plugins/main/TimedLightDarkMode.plugin.js",
     },
   };
 
