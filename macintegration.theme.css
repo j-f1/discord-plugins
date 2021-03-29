@@ -1,6 +1,6 @@
 /**
  * @name MacIntegration
- * @version 1.0.0
+ * @version 1.1.0
  * @description Aligns some parts of Discord's UI with the macOS HIG
  * @author Jed Fox
  * @authorLink https://jedfox.com
@@ -18,13 +18,15 @@ Key:
 .guilds-1SWlCJ: servers sidebar
 .item-3HknzM.themed-OHr7kt: online/all/pending/blocked tabs
 .children-19S4PO: wraps channel title
-.scroller-2TZvBN: server list scroll view
+.scroller-1Bvpku: server list scroll view
 .strikethrough-*: red slash across icon
 .sidebar-2K8pFh: channel list
 .topControls-KKImPZ: wraps top bar in voice channel
 .iconWrapper-2OrFZ1: icon buttons in toolbar
 .content-yTz4x3: main text channel content
 .toolbar-1t6TWx: toolbar buttons in title bar
+.base-3dtUhz: the main content excluding the server list
+.expandedFolderBackground-1cujaW, .folder-1hbNCn: expanded folders
 */
 
 /* shrink title bar to match native toolbars */
@@ -34,11 +36,27 @@ Key:
 .header-2V-4Sw {
   height: 38px;
 }
+
 .guilds-1SWlCJ {
   margin-top: 38px !important;
+  z-index: 1;
 }
-.typeMacOS-3EmCyP.titleBar-AC4pGV {
-  left: 2px;
+.titleBar-AC4pGV {
+  padding-left: 2px;
+  box-shadow: var(--elevation-low);
+  box-sizing: border-box;
+  width: 73px !important;
+}
+.base-3dtUhz {
+  left: 73px;
+}
+.scroller-1Bvpku {
+  padding-top: 12px !important;
+  background: var(--background-secondary);
+}
+.expandedFolderBackground-1cujaW,
+.folder-1hbNCn {
+  background: var(--background-tertiary);
 }
 
 .children-19S4PO .iconWrapper-2OrFZ1 svg {
@@ -55,7 +73,8 @@ Key:
 /* dim/grayscale UI elements when window is not focused */
 .container-1r6BKw.container-1r6BKw,
 .searchBar-6Kv8R2,
-.header-2V-4Sw {
+.header-2V-4Sw,
+.typeMacOS-3EmCyP.titleBar-AC4pGV {
   background: var(--background-secondary);
 }
 
@@ -90,7 +109,8 @@ Key:
 /* make the title bar white to match Big Sur */
 .app-focused .container-1r6BKw.container-1r6BKw,
 .app-focused .searchBar-6Kv8R2,
-.app-focused .header-2V-4Sw {
+.app-focused .header-2V-4Sw,
+.app-focused .typeMacOS-3EmCyP.titleBar-AC4pGV {
   background: var(--background-primary);
 }
 
@@ -100,7 +120,9 @@ Key:
 }
 
 /* divider between channel list and main body */
-.sidebar-2K8pFh {
+.sidebar-2K8pFh,
+.guilds-1SWlCJ,
+.titleBar-AC4pGV {
   border-right: 1px solid var(--background-tertiary);
 }
 
