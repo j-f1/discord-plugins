@@ -28,6 +28,8 @@ Key:
 .toolbar-1t6TWx: toolbar buttons in title bar
 .base-3dtUhz: the main content excluding the server list
 .expandedFolderBackground-1cujaW, .folder-1hbNCn: expanded folders
+.container-3baos1: user area
+.avatar-SmRMf2: user area avatar
 */
 
 /* shrink title bar to match native toolbars */
@@ -191,15 +193,20 @@ Key:
   margin-top: -5px;
   pointer-events: none;
 }
-.panels-j1Uci_ > * {
+.container-3baos1 {
   box-shadow: var(--elevation-low);
   transform: scaleY(-1);
   pointer-events: all;
-  padding-left: 10px;
+  height: auto;
+  padding: 12px;
 }
-.panels-j1Uci_ > * > * {
+.container-3baos1 .avatar-SmRMf2 {
+  width: 48px !important;
+  height: 48px !important;
+}
+.container-3baos1 > * {
   transform: scaleY(-1);
 }
 .scroller-1Bvpku > :nth-last-child(2) {
-  padding-bottom: 58px;
+  padding-bottom: 80px;
 }
