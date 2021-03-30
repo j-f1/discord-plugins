@@ -19,6 +19,7 @@ Key:
 .item-3HknzM.themed-OHr7kt: online/all/pending/blocked tabs
 .children-19S4PO: wraps channel title
 .scroller-1Bvpku: server list scroll view
+.scroller-1JbKMe: friends/dms list scroll view
 .strikethrough-*: red slash across icon
 .sidebar-2K8pFh: channel sidebar (list + server name + voice status)
 .container-3w7J-x: channel list
@@ -89,16 +90,26 @@ Key:
   --elevation-low: 0 1.5px 1.5px rgba(0, 0, 0, 0.16);
 }
 
+.container-3baos1 {
+  z-index: 1;
+  box-shadow: var(--elevation-low);
+}
+.container-3baos1,
+.container-3baos1 > * {
+  transform: scaleY(-1);
+}
 /* dim/grayscale UI elements when window is not focused */
 .container-1r6BKw.container-1r6BKw,
 .searchBar-6Kv8R2,
 .header-2V-4Sw,
-.typeMacOS-3EmCyP.titleBar-AC4pGV {
+.typeMacOS-3EmCyP.titleBar-AC4pGV,
+.app-focused .panels-j1Uci_ > * {
   background: var(--background-secondary);
 }
 
 :root:not(.app-focused) .scroller-1Bvpku,
 :root:not(.app-focused) .container-3w7J-x,
+:root:not(.app-focused) .scroller-1JbKMe,
 :root:not(.app-focused) .panels-j1Uci_ > * {
   background: var(--background-secondary-alt) !important;
 }
@@ -135,7 +146,8 @@ Key:
 .app-focused .container-1r6BKw.container-1r6BKw,
 .app-focused .searchBar-6Kv8R2,
 .app-focused .header-2V-4Sw,
-.app-focused .typeMacOS-3EmCyP.titleBar-AC4pGV {
+.app-focused .typeMacOS-3EmCyP.titleBar-AC4pGV,
+.app-focused .panels-j1Uci_ > * {
   background: var(--background-primary);
 }
 
@@ -172,41 +184,4 @@ Key:
 .content-yTz4x3::before {
   top: -38px;
   height: 38px;
-}
-
-/* extend user card across the server bar */
-.base-3dtUhz,
-.sidebar-2K8pFh {
-  overflow: visible;
-}
-.app-focused .panels-j1Uci_ > * {
-  background: var(--background-secondary);
-}
-.panels-j1Uci_ {
-  background: transparent !important;
-  z-index: 1;
-  transform: translateX(-73px);
-  width: calc(100% + 74px);
-  box-sizing: border-box;
-  overflow-x: hidden;
-  padding-top: 5px;
-  margin-top: -5px;
-  pointer-events: none;
-}
-.container-3baos1 {
-  box-shadow: var(--elevation-low);
-  transform: scaleY(-1);
-  pointer-events: all;
-  height: auto;
-  padding: 12px;
-}
-.container-3baos1 .avatar-SmRMf2 {
-  width: 48px !important;
-  height: 48px !important;
-}
-.container-3baos1 > * {
-  transform: scaleY(-1);
-}
-.scroller-1Bvpku > :nth-last-child(2) {
-  padding-bottom: 80px;
 }
