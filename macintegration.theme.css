@@ -1,6 +1,6 @@
 /**
  * @name MacIntegration
- * @version 1.1.1
+ * @version 1.1.2
  * @description Aligns some parts of Discord's UI with the macOS HIG
  * @author Jed Fox
  * @authorLink https://jedfox.com
@@ -31,6 +31,7 @@ Key:
 .expandedFolderBackground-1cujaW, .folder-1hbNCn: expanded folders
 .container-3baos1: user area
 .avatar-SmRMf2: user area avatar
+.members-1998pB: chat member sidebar
 */
 
 /* shrink title bar to match native toolbars */
@@ -103,14 +104,16 @@ Key:
 .searchBar-6Kv8R2,
 .header-2V-4Sw,
 .typeMacOS-3EmCyP.titleBar-AC4pGV,
-.app-focused .panels-j1Uci_ > * {
+.app-focused .panels-j1Uci_ > *,
+:root:not(.app-focused) .panels-j1Uci_ > * {
   background: var(--background-secondary);
 }
 
 :root:not(.app-focused) .scroller-1Bvpku,
 :root:not(.app-focused) .container-3w7J-x,
 :root:not(.app-focused) .scroller-1JbKMe,
-:root:not(.app-focused) .panels-j1Uci_ > * {
+:root:not(.app-focused) .members-1998pB,
+:root:not(.app-focused) .members-1998pB > div {
   background: var(--background-secondary-alt) !important;
 }
 
