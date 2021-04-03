@@ -14,6 +14,8 @@
 module.exports = class AutoDarkModePlugin {
   load() {
     this.matcher = window.matchMedia("(prefers-color-scheme: dark)");
+    this.themeModule = BdApi.findModuleByProps("guildPositions", "theme");
+    this.settingsModule = BdApi.findModuleByProps("updateLocalSettings");
   }
   start() {
     this.matcher.addEventListener("change", this.changeTheme);
@@ -26,8 +28,8 @@ module.exports = class AutoDarkModePlugin {
 
   changeTheme({ matches: isDark }) {
     const newTheme = isDark ? "dark" : "light";
-    if (newTheme != BdApi.findModuleByProps("guildPositions", "theme").theme) {
-      BdApi.findModuleByProps("updateLocalSettings").updateLocalSettings({
+    if (newTheme != this.themeModule.theme) {
+      this.settingsModule.updateLocalSettings({
         theme: newTheme,
       });
     }
