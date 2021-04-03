@@ -29,6 +29,7 @@ Key:
 .toolbar-1t6TWx: toolbar buttons in title bar
 .base-3dtUhz: the main content excluding the server list
 .expandedFolderBackground-1cujaW, .folder-1hbNCn: expanded folders
+.wrapper-24pKcD: voice connection screen
 .container-3baos1: user area
 .avatar-SmRMf2: user area avatar
 .members-1998pB: chat member sidebar
@@ -91,14 +92,27 @@ Key:
   --elevation-low: 0 1.5px 1.5px rgba(0, 0, 0, 0.16);
 }
 
-.container-3baos1 {
+.wrapper-24pKcD:empty + .container-3baos1,
+.wrapper-24pKcD:not(empty) {
   z-index: 1;
   box-shadow: var(--elevation-low);
 }
-.container-3baos1,
-.container-3baos1 > * {
+.wrapper-24pKcD:empty + .container-3baos1,
+.wrapper-24pKcD:not(empty),
+.wrapper-24pKcD:empty + .container-3baos1 > *,
+.wrapper-24pKcD:not(empty) > * {
   transform: scaleY(-1);
 }
+
+.wrapper-24pKcD .button-1YfofB.buttonColor-7qQbGO,
+.app-focused .wrapper-24pKcD .button-1YfofB.buttonColor-7qQbGO:hover {
+  background: var(--background-tertiary);
+}
+
+.app-focused .wrapper-24pKcD .button-1YfofB.buttonColor-7qQbGO:not(:hover) {
+  background: var(--background-secondary);
+}
+
 /* dim/grayscale UI elements when window is not focused */
 .container-1r6BKw.container-1r6BKw,
 .searchBar-6Kv8R2,
