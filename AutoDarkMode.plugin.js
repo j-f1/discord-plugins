@@ -8,7 +8,7 @@
  * @authorLink https://jedfox.com
  * @authorId 706842348239323199
  * @website https://jedfox.com
- * @source https://raw.githubusercontent.com/j-f1/discord-plugins/main/TimedLightDarkMode.plugin.js
+ * @source https://github.com/j-f1/discord-plugins/blob/main/AutoDarkMode.plugin.js
  */
 
 module.exports = class AutoDarkModePlugin {
