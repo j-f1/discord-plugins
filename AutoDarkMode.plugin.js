@@ -1,7 +1,7 @@
 /**
  * @name AutoDarkMode
  *
- * @version 1.1.0
+ * @version 1.1.1
  * @description Automatically toggle dark theme based on system setting.
  * Adapted from “Timed Light Dark Mode” by DevilBro.
  * @author Jed Fox
@@ -16,6 +16,7 @@ module.exports = class AutoDarkModePlugin {
     this.matcher = window.matchMedia("(prefers-color-scheme: dark)");
     this.themeModule = BdApi.findModuleByProps("guildPositions", "theme");
     this.settingsModule = BdApi.findModuleByProps("updateLocalSettings");
+    this.changeTheme = this.changeTheme.bind(this);
   }
   start() {
     this.matcher.addEventListener("change", this.changeTheme);
