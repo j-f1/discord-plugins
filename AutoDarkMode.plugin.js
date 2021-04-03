@@ -1,13 +1,11 @@
 /**
  * @name AutoDarkMode
  *
- * @version 1.1.1
+ * @version 1.1.2
  * @description Automatically toggle dark theme based on system setting.
  * Adapted from “Timed Light Dark Mode” by DevilBro.
  * @author Jed Fox
- * @authorLink https://jedfox.com
  * @authorId 706842348239323199
- * @website https://jedfox.com
  * @source https://github.com/j-f1/discord-plugins/blob/main/AutoDarkMode.plugin.js
  */
 
