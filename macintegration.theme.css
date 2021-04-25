@@ -1,6 +1,6 @@
 /**
  * @name MacIntegration
- * @version 1.1.3
+ * @version 1.2.0
  * @description Aligns some parts of Discord's UI with the macOS HIG
  * @author Jed Fox
  * @authorLink https://jedfox.com
@@ -28,12 +28,35 @@ Key:
 .content-yTz4x3: main text channel content
 .toolbar-1t6TWx: toolbar buttons in title bar
 .base-3dtUhz: the main content excluding the server list
-.expandedFolderBackground-1cujaW, .folder-1hbNCn: expanded folders
+.expandedFolderBackground-1cujaW: expanded folder backdrop
+.folder-1hbNCn: folder icon
+.circleIconButton-1QV--U: add/join server buttons in sidebar
 .wrapper-24pKcD: voice connection screen
 .container-3baos1: user area
 .avatar-SmRMf2: user area avatar
 .members-1998pB: chat member sidebar
-mask-1l8v16: svg around avatar + status lockup
+.mask-1l8v16: svg around avatar + status lockup
+.clickable-3rdHwn: top toolbar buttons
+.tab-ck0077: inbox tabs
+.button-1-5Aqk: inbox buttons
+.mainContent-u_9PKf: voice/text chats in sidebar
+.clickable-536fPF: channel section header
+.app-2rEoOp button: many buttons
+.wrapper-25eVIn: server/folder wrappers
+.button-1ZiXG9: message action buttons
+.scroller-3BxosC: menu scroller
+.item-1tOPte: any menu item
+.buttonWrapper-1ZmCpA: GIF button
+.peopleListItem-2nzedh: detail view of friends list
+.actionButton-uPB8Fs: friend action button
+.privateChannelsHeaderContainer-3NB1K1: header of dms list
+.interactive-3B9GmY: active now card
+.channel-2QD9_O: DM thread in sidebar
+.closeButton-2GCmT5: hide DM thread
+.cursorPointer-1j7DL8: header of dm thread
+.item-PXvHYJ: friends toolbar tabs
+.clickable-1JJAn8 .layout-2DM8Md: users in server right sidebar
+.actionIcon-PgcMM2: channel sidebar action button
 */
 
 /* shrink title bar to match native toolbars */
@@ -69,6 +92,7 @@ mask-1l8v16: svg around avatar + status lockup
   height: 20px;
   margin: 0;
   margin-right: 2px;
+  margin-top: 2px;
 }
 
 /* friends tab bar */
@@ -85,6 +109,7 @@ mask-1l8v16: svg around avatar + status lockup
 .app-focused .theme-light {
   /* variant of elevation-medium */
   --elevation-low: 0 1px 3px rgba(0, 0, 0, 0.12), 0 0.5px 0 rgba(0, 0, 0, 0.1);
+  /* --background-floating: rgba(255, 255, 255, 0.25); */
 }
 .app-focused.theme-dark,
 .app-focused .theme-dark {
@@ -206,4 +231,53 @@ mask-1l8v16: svg around avatar + status lockup
 .content-yTz4x3::before {
   top: -38px;
   height: 38px;
+}
+
+/* disable cursor: pointer; */
+.header-2V-4Sw,
+.clickable-3rdHwn,
+.tab-ck0077,
+.button-1-5Aqk,
+.mainContent-u_9PKf,
+.clickable-536fPF,
+.app-2rEoOp button,
+.wrapper-25eVIn,
+.folder-1hbNCn,
+.circleIconButton-1QV--U,
+.button-1ZiXG9,
+.item-1tOPte,
+.buttonWrapper-1ZmCpA,
+.peopleListItem-2nzedh,
+.peopleListItem-2nzedh,
+.actionButton-uPB8Fs,
+.interactive-3B9GmY,
+.channel-2QD9_O,
+.channel-2QD9_O > *,
+.cursorPointer-1j7DL8,
+.item-PXvHYJ,
+.clickable-1JJAn8:hover .layout-2DM8Md,
+.actionIcon-PgcMM2 {
+  cursor: default !important;
+}
+.closeButton-2GCmT5 {
+  cursor: pointer;
+}
+
+.wrapper-PY0fhH:hover .name-3l27Hl,
+.privateChannelsHeaderContainer-3NB1K1:hover {
+  color: var(--channels-default) !important;
+}
+
+/* native-like menus */
+.item-1tOPte {
+  border-radius: 4px;
+}
+
+.menu-3sdvDG {
+  border-radius: 6px;
+  /* backdrop-filter: blur(17.5px); */
+  /* animation: none !important; */
+}
+.scroller-3BxosC {
+  padding: 4px 6px;
 }
