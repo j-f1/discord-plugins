@@ -53,6 +53,8 @@ mask-1l8v16: svg around avatar + status lockup
   box-shadow: var(--elevation-low);
   box-sizing: border-box;
   width: 73px !important;
+  z-index: 2;
+  clip-path: inset(0 0 -10px 0); /* clip horizontal shadow */
 }
 .scroller-1Bvpku {
   padding-top: 12px !important;
@@ -174,7 +176,6 @@ mask-1l8v16: svg around avatar + status lockup
 
 .header-2V-4Sw {
   transition: none; /* fix crossfade when switching apps */
-  z-index: 3001; /* hide shadow of window buttons */
 }
 
 /* divider between channel list and main body */
