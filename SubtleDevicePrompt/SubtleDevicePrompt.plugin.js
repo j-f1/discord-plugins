@@ -149,7 +149,7 @@ module.exports = class SubtleDevicePrompt {
           } catch (e) {
             BdApi.showToast(
               "Something went wrong with SubtleDevicePrompt! Please report this to Jed using the Discord server linked in the settings.",
-              { type: "error", timeout: 10e3, forceShow: true }
+              { type: "error", timeout: 7e3, forceShow: true }
             );
             console.error(e);
             return patch.callOriginalMethod();
