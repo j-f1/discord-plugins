@@ -10,8 +10,8 @@ Note: does not work if you’ve clicked “Don’t show me this again” in that
 
 ### Preview
 
-![screenshot (light mode)](./screenshot-light.png)
-![screenshot (dark mode)](./screenshot-dark.png)
+<img src="./screenshot-dark.png" width=251>
+<img src="./screenshot-light.png" width=254>
 
 [icon]: https://img.shields.io/badge/Download-Subtle%20Device%20Prompt-brightgreen.svg
 [link]: https://betterdiscord.app/plugin/SubtleDevicePrompt
