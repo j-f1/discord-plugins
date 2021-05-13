@@ -20,7 +20,7 @@ Key:
 .children-19S4PO: wraps channel title
 .scroller-1Bvpku: server list scroll view
 .scroller-1JbKMe: friends/dms list scroll view
-.strikethrough-*: red slash across icon
+[class^="strikethrough"]: red slash across icon
 .sidebar-2K8pFh: channel sidebar (list + server name + voice status)
 .container-3w7J-x: channel list
 .topControls-KKImPZ: wraps top bar in voice channel
@@ -57,6 +57,11 @@ Key:
 .item-PXvHYJ: friends toolbar tabs
 .clickable-1JJAn8 .layout-2DM8Md: users in server right sidebar
 .actionIcon-PgcMM2: channel sidebar action button
+.threadSidebarOpen-vdkwIh: main chat when the thread sidebar is open
+.threadSidebar-1o3BTy: thread sidebar
+.bannerImage-3KhIJ6: the fancy image at the top of the sidebar of some servers
+.bannerImage-3KhIJ6::before: a gradient overlay for that image
+.bannerVisible-2ZE_qG: added when the above-mentioned image is present
 */
 
 /* shrink title bar to match native toolbars */
@@ -117,6 +122,10 @@ Key:
   --elevation-low: 0 1.5px 1.5px rgba(0, 0, 0, 0.16);
 }
 
+.wrapper-24pKcD {
+  display: flex;
+  flex-direction: column-reverse;
+}
 .wrapper-24pKcD:empty + .container-3baos1,
 .wrapper-24pKcD:not(empty) {
   z-index: 1;
@@ -135,12 +144,16 @@ Key:
   opacity: 0.75;
 }
 
-.wrapper-24pKcD .button-1YfofB.buttonColor-7qQbGO,
-.app-focused .wrapper-24pKcD .button-1YfofB.buttonColor-7qQbGO:hover {
+.wrapper-24pKcD .button-1YfofB.buttonColor-7qQbGO:not(.buttonActive-3FrkXp),
+.app-focused
+  .wrapper-24pKcD
+  .button-1YfofB.buttonColor-7qQbGO:not(.buttonActive-3FrkXp):hover {
   background: var(--background-tertiary);
 }
 
-.app-focused .wrapper-24pKcD .button-1YfofB.buttonColor-7qQbGO:not(:hover) {
+.app-focused
+  .wrapper-24pKcD
+  .button-1YfofB.buttonColor-7qQbGO:not(.buttonActive-3FrkXp):not(:hover) {
   background: var(--background-secondary);
 }
 
@@ -148,8 +161,10 @@ Key:
 .container-1r6BKw.container-1r6BKw,
 .searchBar-6Kv8R2,
 .header-2V-4Sw,
+.hasBanner-2SrLR3 .header-2V-4Sw, /* specificity hack */
 .typeMacOS-3EmCyP.titleBar-AC4pGV,
 .app-focused .panels-j1Uci_ > *,
+.bannerVisible-2ZE_qG,
 :root:not(.app-focused) .panels-j1Uci_ > * {
   background: var(--background-secondary);
 }
@@ -194,7 +209,9 @@ Key:
 .app-focused .container-1r6BKw.container-1r6BKw,
 .app-focused .searchBar-6Kv8R2,
 .app-focused .header-2V-4Sw,
+.app-focused .hasBanner-2SrLR3 .header-2V-4Sw, /* specificity hack */
 .app-focused .typeMacOS-3EmCyP.titleBar-AC4pGV,
+.app-focused .bannerVisible-2ZE_qG,
 .app-focused .panels-j1Uci_ > * {
   background: var(--background-primary);
 }
@@ -206,7 +223,8 @@ Key:
 /* divider between channel list and main body */
 .sidebar-2K8pFh,
 .guilds-1SWlCJ,
-.titleBar-AC4pGV {
+.titleBar-AC4pGV,
+.threadSidebarOpen-vdkwIh {
   border-right: 0.5px solid var(--background-tertiary);
 }
 
@@ -231,6 +249,42 @@ Key:
 .content-yTz4x3::before {
   top: -38px;
   height: 38px;
+}
+
+/* tweaks to fancy header image in special servers */
+.hasBanner-2SrLR3 .header-2V-4Sw {
+  box-shadow: var(--elevation-low);
+}
+.bannerImage-3KhIJ6:before {
+  display: none;
+}
+
+.app-focused .hasBanner-2SrLR3 .header-2V-4Sw {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12.5px) saturate(180%);
+}
+.theme-dark.app-focused .hasBanner-2SrLR3 .header-2V-4Sw {
+  background: rgba(0, 0, 0, 0.4);
+}
+.theme-dark .bannerImage-3KhIJ6 {
+  filter: brightness(0.8);
+}
+
+.theme-light .bannerVisible-2ZE_qG .header-2V-4Sw {
+  color: inherit;
+  filter: none;
+}
+
+/* tweaks to thread sidebar */
+.threadSidebar-1o3BTy,
+.threadSidebarOpen-vdkwIh {
+  border-radius: 0 !important;
+}
+.threadSidebar-1o3BTy {
+  margin-left: 0;
+}
+.threadSidebar-1o3BTy .toolbar-1t6TWx {
+  order: -1;
 }
 
 /* disable cursor: pointer; */
@@ -259,8 +313,9 @@ Key:
 .actionIcon-PgcMM2 {
   cursor: default !important;
 }
-.closeButton-2GCmT5 {
-  cursor: pointer;
+.closeButton-2GCmT5,
+.lookLink-9FtZy- {
+  cursor: pointer !important;
 }
 
 .wrapper-PY0fhH:hover .name-3l27Hl,
