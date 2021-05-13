@@ -6,6 +6,7 @@
  * Adapted from “Timed Light Dark Mode” by DevilBro.
  * @author Jed Fox
  * @authorId 706842348239323199
+ * @invite KK8WeSxrWf
  * @source https://github.com/j-f1/discord-plugins/blob/main/AutoDarkMode.plugin.js
  */
 

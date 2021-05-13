@@ -5,6 +5,7 @@
  * @description Replace the dialog when connecting a new audio device with a minimal card
  * @author Jed Fox
  * @authorId 706842348239323199
+ * @invite KK8WeSxrWf
  * @source https://github.com/j-f1/discord-plugins/blob/main/SubtleDevicePrompt/SubtleDevicePrompt.plugin.js
  */
 
@@ -146,6 +147,10 @@ module.exports = class SubtleDevicePrompt {
               .insertAdjacentElement("afterbegin", root);
             setTimeout(() => (root.style.backgroundColor = ""), 250);
           } catch (e) {
+            BdApi.showToast(
+              "Something went wrong with SubtleDevicePrompt! Please report this to Jed using the Discord server linked in the settings.",
+              { type: "error", timeout: 10e3, forceShow: true }
+            );
             console.error(e);
             return patch.callOriginalMethod();
           }
