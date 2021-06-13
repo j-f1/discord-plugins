@@ -12,6 +12,7 @@
 /*
 Key:
 .searchBar-6Kv8R2: "Find or start a conversation" on homepage
+.searchBarComponent-32dTOx: contents of that button/text field
 .header-2V-4Sw: server name header
 .container-1r6BKw: main title bar/toolbar with channel name
 .macButtons-2MuSAC: window buttons
@@ -203,6 +204,18 @@ Key:
 
 .searchBar-6Kv8R2 {
   padding: 0 5px;
+}
+
+.searchBarComponent-32dTOx {
+  text-align: center !important;
+}
+.searchBarComponent-32dTOx::before {
+  content: "􀊫";
+  font-family: "SF Pro Text", "SF Pro";
+  font-size: 90%;
+  display: inline-block;
+  margin-right: 0.35em;
+  transform: translateY(-0.5px);
 }
 
 /* make the title bar white to match Big Sur */
