@@ -65,6 +65,14 @@ Key:
 .bannerVisible-2ZE_qG: added when the above-mentioned image is present
 */
 
+/* font */
+:root {
+  --font-primary: system-ui !important;
+  --font-display: system-ui !important;
+}
+
+/* todo: something about font size because system-ui is bigger than the default font */
+
 /* shrink title bar to match native toolbars */
 .container-1r6BKw,
 .searchBar-6Kv8R2,
