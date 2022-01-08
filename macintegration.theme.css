@@ -29,8 +29,8 @@ Key:
 .content-yTz4x3: main text channel content
 .toolbar-1t6TWx: toolbar buttons in title bar
 .base-3dtUhz: the main content excluding the server list
-.expandedFolderBackground-1cujaW: expanded folder backdrop
-.folder-1hbNCn: folder icon
+.expandedFolderBackground-3ZDF05: expanded folder backdrop
+.folder-2w6LX1: folder icon
 .circleIconButton-1QV--U: add/join server buttons in sidebar
 .wrapper-24pKcD: voice connection screen
 .container-3baos1: user area
@@ -97,8 +97,8 @@ Key:
   padding-top: 12px !important;
   background: var(--background-secondary);
 }
-.expandedFolderBackground-1cujaW,
-.folder-1hbNCn {
+.expandedFolderBackground-3ZDF05,
+.folder-2w6LX1 {
   background: var(--background-tertiary);
 }
 
@@ -306,6 +306,7 @@ Key:
 }
 .threadSidebar-1o3BTy .toolbar-1t6TWx {
   order: -1;
+  flex-direction: row-reverse;
 }
 
 /* disable cursor: pointer; */
@@ -317,7 +318,7 @@ Key:
 .clickable-536fPF,
 .app-2rEoOp button,
 .wrapper-25eVIn,
-.folder-1hbNCn,
+.folder-2w6LX1,
 .circleIconButton-1QV--U,
 .button-1ZiXG9,
 .item-1tOPte,
@@ -357,3 +358,7 @@ Key:
 .scroller-3BxosC {
   padding: 4px 6px;
 }
+
+/* .modeSelected-346R90 .content-1x5b-n, .modeSelected-346R90:hover .content-1x5b-n {
+  background: blue !important;
+} */
