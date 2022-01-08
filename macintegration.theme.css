@@ -11,58 +11,62 @@
 
 /*
 Key:
-.searchBar-6Kv8R2: "Find or start a conversation" on homepage
-.searchBarComponent-32dTOx: contents of that button/text field
-.header-2V-4Sw: server name header
-.container-1r6BKw: main title bar/toolbar with channel name
-.macButtons-2MuSAC: window buttons
-.guilds-1SWlCJ: servers sidebar
-.item-3HknzM.themed-OHr7kt: online/all/pending/blocked tabs
-.children-19S4PO: wraps channel title
-.scroller-1Bvpku: server list scroll view
-.scroller-1JbKMe: friends/dms list scroll view
+.searchBar-3TnChZ: "Find or start a conversation" on homepage
+.searchBarComponent-3N7dCG: contents of that button/text field
+.header-3OsQeK: server name header
+.container-ZMc96U: main title bar/toolbar with channel name
+.macButtons-eIdy0e: window buttons
+.guilds-2JjMmN: servers sidebar
+.item-3XjbnG.themed-2-lozF: online/all/pending/blocked tabs
+.item-3XjbnG: friends toolbar tabs
+.children-3xh0VB: wraps channel title
+.scroller-3X7KbA: server list scroll view
+.scroller-WSmht3: friends/dms list scroll view
 [class^="strikethrough"]: red slash across icon
-.sidebar-2K8pFh: channel sidebar (list + server name + voice status)
-.container-3w7J-x: channel list
-.topControls-KKImPZ: wraps top bar in voice channel
-.iconWrapper-2OrFZ1: icon buttons in toolbar
-.content-yTz4x3: main text channel content
-.toolbar-1t6TWx: toolbar buttons in title bar
-.base-3dtUhz: the main content excluding the server list
-.expandedFolderBackground-3ZDF05: expanded folder backdrop
-.folder-2w6LX1: folder icon
-.circleIconButton-1QV--U: add/join server buttons in sidebar
-.wrapper-24pKcD: voice connection screen
-.container-3baos1: user area
-.avatar-SmRMf2: user area avatar
-.members-1998pB: chat member sidebar
-.mask-1l8v16: svg around avatar + status lockup
-.clickable-3rdHwn: top toolbar buttons
-.tab-ck0077: inbox tabs
-.button-1-5Aqk: inbox buttons
-.mainContent-u_9PKf: voice/text chats in sidebar
-.clickable-536fPF: channel section header
-.app-2rEoOp button: many buttons
-.wrapper-25eVIn: server/folder wrappers
-.button-1ZiXG9: message action buttons
-.scroller-3BxosC: menu scroller
-.item-1tOPte: any menu item
-.buttonWrapper-1ZmCpA: GIF button
-.peopleListItem-2nzedh: detail view of friends list
-.actionButton-uPB8Fs: friend action button
-.privateChannelsHeaderContainer-3NB1K1: header of dms list
-.interactive-3B9GmY: active now card
-.channel-2QD9_O: DM thread in sidebar
-.closeButton-2GCmT5: hide DM thread
-.cursorPointer-1j7DL8: header of dm thread
-.item-PXvHYJ: friends toolbar tabs
-.clickable-1JJAn8 .layout-2DM8Md: users in server right sidebar
-.actionIcon-PgcMM2: channel sidebar action button
-.threadSidebarOpen-vdkwIh: main chat when the thread sidebar is open
-.threadSidebar-1o3BTy: thread sidebar
-.bannerImage-3KhIJ6: the fancy image at the top of the sidebar of some servers
-.bannerImage-3KhIJ6::before: a gradient overlay for that image
-.bannerVisible-2ZE_qG: added when the above-mentioned image is present
+.sidebar-1tnWFu: channel sidebar (list + server name + voice status)
+.container-1NXEtd: channel list
+.topControls-23RE3h: wraps top bar in voice channel
+.iconWrapper-2awDjA: icon buttons in toolbar
+.content-1jQy2l: main text channel content (incl. right sidebar)
+.toolbar-3_r2xA: toolbar buttons in title bar
+.expandedFolderBackground-1kSAf6: expanded folder backdrop
+.folder-241Joy: folder icon
+.panels-3wFtMD: bottom of sidebar ("User Area")
+.circleIconButton-1VxDrg: add/join server buttons in sidebar
+.wrapper-3Hk9OB: wrapper around "Voice Connected" card in sidebar
+.buttonColor-3bP3fX: buttons in Voice Connected card
+.container-YkUktl: username/avatar card in sidebar
+.members-3WRCEx: chat member sidebar
+.mask-1FEkla: <svg> around avatar + status lockup
+.clickable-ZD7xvu: top toolbar buttons
+.tab-TRrPC8: inbox tabs
+.button-1_oXub: inbox buttons
+.mainContent-20q_Hp: voice/text chats in sidebar
+.clickable-2AoIYN: channel section header
+.wrapper-38slSD: server/folder wrappers
+.button-3bklZh: message action buttons
+.menu-1QACrS: any menu
+.scroller-1bVxF5: any menu scroller
+.item-1OdjEX: any menu item
+.buttonWrapper-3YFQGJ: GIF button
+.peopleListItem-u6dGxF: people in main friends list
+.actionButton-3-B2x-: friend action button
+.privateChannelsHeaderContainer-1UWASm: header of dms list
+.interactive-2zD88a: active now card
+.channel-1Shao0: DM thread in sidebar
+.closeButton-mupH76: hide DM thread
+.cursorPointer-3JF56F: header of dm thread
+.clickable-28SzVr .layout-1qmrhw: users in server right sidebar
+.actionIcon-2sw4Sl: channel sidebar action button
+.threadSidebarOpen-1LSXvU: main chat when the thread sidebar is open
+.container-3XgAHv: thread sidebar
+.bannerImage-ubW8K-: the fancy image at the top of the sidebar of some servers
+.bannerImage-ubW8K-::before: a gradient overlay for that image
+.bannerVisible-Vkyg1I: added when the above-mentioned image is present
+.hasBanner-2IrYih: added when the banner image is present and not scrolled away
+.typeMacOS-3V4xXE: wrapper for window buttons, presumably only on macOS
+.titleBar-1it3bQ: wrapper for window buttons
+.panel-2ZFCRb: screen sharing panel above user area
 */
 
 /* font */
@@ -74,18 +78,18 @@ Key:
 /* todo: something about font size because system-ui is bigger than the default font */
 
 /* shrink title bar to match native toolbars */
-.container-1r6BKw,
-.searchBar-6Kv8R2,
-.macButtons-2MuSAC,
-.header-2V-4Sw {
+.container-ZMc96U,
+.searchBar-3TnChZ,
+.macButtons-eIdy0e,
+.header-3OsQeK {
   height: 38px;
 }
 
-.guilds-1SWlCJ {
+.guilds-2JjMmN {
   margin-top: 38px !important;
   z-index: 1;
 }
-.titleBar-AC4pGV {
+.titleBar-1it3bQ {
   padding-left: 2px;
   box-shadow: var(--elevation-low);
   box-sizing: border-box;
@@ -93,16 +97,16 @@ Key:
   z-index: 2;
   clip-path: inset(0 0 -10px 0); /* clip horizontal shadow */
 }
-.scroller-1Bvpku {
+.scroller-3X7KbA {
   padding-top: 12px !important;
   background: var(--background-secondary);
 }
-.expandedFolderBackground-3ZDF05,
-.folder-2w6LX1 {
+.expandedFolderBackground-1kSAf6,
+.folder-241Joy {
   background: var(--background-tertiary);
 }
 
-.children-19S4PO .iconWrapper-2OrFZ1 svg {
+.children-3xh0VB .iconWrapper-2awDjA svg {
   height: 20px;
   margin: 0;
   margin-right: 2px;
@@ -110,7 +114,7 @@ Key:
 }
 
 /* friends tab bar */
-.item-3HknzM.themed-OHr7kt {
+.item-3XjbnG.themed-2-lozF {
   margin: 0 4px;
 }
 
@@ -131,69 +135,74 @@ Key:
   --elevation-low: 0 1.5px 1.5px rgba(0, 0, 0, 0.16);
 }
 
-.wrapper-24pKcD {
+.wrapper-3Hk9OB {
   display: flex;
   flex-direction: column-reverse;
 }
-.wrapper-24pKcD:empty + .container-3baos1,
-.wrapper-24pKcD:not(empty) {
+.wrapper-3Hk9OB:empty + .container-YkUktl,
+.wrapper-3Hk9OB:not(empty):first-child,
+.panel-2ZFCRb {
   z-index: 1;
   box-shadow: var(--elevation-low);
 }
-.wrapper-24pKcD:empty + .container-3baos1,
-.wrapper-24pKcD:not(empty),
-.wrapper-24pKcD:empty + .container-3baos1 > *,
-.wrapper-24pKcD:not(empty) > * {
+.wrapper-3Hk9OB:empty + .container-YkUktl,
+.wrapper-3Hk9OB:not(empty):first-child,
+.wrapper-3Hk9OB:empty + .container-YkUktl > *,
+.wrapper-3Hk9OB:not(empty):first-child > *,
+.panel-2ZFCRb, .panel-2ZFCRb > * {
   transform: scaleY(-1);
 }
+.panel-2ZFCRb {
+  border-top: 1px solid var(--background-modifier-accent);
+}
 
-:root:not(.app-focused) .mask-1l8v16 [mask^="url(#svg-mask-status-"],
-:root:not(.app-focused) .mask-1l8v16 svg > mask + rect {
+:root:not(.app-focused) .mask-1FEkla [mask^="url(#svg-mask-status-"],
+:root:not(.app-focused) .mask-1FEkla svg > mask + rect {
   fill: var(--text-muted) !important;
   opacity: 0.75;
 }
 
-.wrapper-24pKcD .button-1YfofB.buttonColor-7qQbGO:not(.buttonActive-3FrkXp),
+.wrapper-3Hk9OB .buttonColor-3bP3fX:not(.buttonActive-Uc1jHx),
 .app-focused
-  .wrapper-24pKcD
-  .button-1YfofB.buttonColor-7qQbGO:not(.buttonActive-3FrkXp):hover {
+  .wrapper-3Hk9OB
+  .buttonColor-3bP3fX:not(.buttonActive-Uc1jHx):hover {
   background: var(--background-tertiary);
 }
 
 .app-focused
-  .wrapper-24pKcD
-  .button-1YfofB.buttonColor-7qQbGO:not(.buttonActive-3FrkXp):not(:hover) {
+  .wrapper-3Hk9OB
+  .buttonColor-3bP3fX:not(.buttonActive-Uc1jHx):not(:hover) {
   background: var(--background-secondary);
 }
 
 /* dim/grayscale UI elements when window is not focused */
-.container-1r6BKw.container-1r6BKw,
-.searchBar-6Kv8R2,
-.header-2V-4Sw,
-.hasBanner-2SrLR3 .header-2V-4Sw, /* specificity hack */
-.typeMacOS-3EmCyP.titleBar-AC4pGV,
-.app-focused .panels-j1Uci_ > *,
-.bannerVisible-2ZE_qG,
-:root:not(.app-focused) .panels-j1Uci_ > * {
+.container-ZMc96U.container-ZMc96U,
+.searchBar-3TnChZ,
+.header-3OsQeK,
+.hasBanner-2IrYih .header-3OsQeK, /* specificity hack */
+.typeMacOS-3V4xXE.titleBar-1it3bQ,
+.app-focused .panels-3wFtMD > *,
+.bannerVisible-Vkyg1I,
+:root:not(.app-focused) .panels-3wFtMD > * {
   background: var(--background-secondary);
 }
 
-:root:not(.app-focused) .scroller-1Bvpku,
-:root:not(.app-focused) .container-3w7J-x,
-:root:not(.app-focused) .scroller-1JbKMe,
-:root:not(.app-focused) .members-1998pB,
-:root:not(.app-focused) .members-1998pB > div {
+:root:not(.app-focused) .scroller-3X7KbA,
+:root:not(.app-focused) .container-1NXEtd,
+:root:not(.app-focused) .scroller-WSmht3,
+:root:not(.app-focused) .members-3WRCEx,
+:root:not(.app-focused) .members-3WRCEx > div {
   background: var(--background-secondary-alt) !important;
 }
 
-.theme-light:not(.app-focused) .children-19S4PO::after {
+.theme-light:not(.app-focused) .children-3xh0VB::after {
   background: linear-gradient(
     90deg,
     hsla(0, 0%, 100%, 0) 0,
     var(--background-secondary)
   );
 }
-.theme-dark:not(.app-focused) .children-19S4PO::after {
+.theme-dark:not(.app-focused) .children-3xh0VB::after {
   background: linear-gradient(
     90deg,
     rgba(54, 57, 63, 0) 0,
@@ -201,6 +210,7 @@ Key:
   );
 }
 
+/* scroller-2TZvBN got rerolled; not sure what it is now. oops! */
 :root:not(.app-focused) [aria-controls="ADD_FRIEND-tab"],
 :root:not(.app-focused) .scroller-2TZvBN > * {
   filter: grayscale();
@@ -210,14 +220,14 @@ Key:
   opacity: 0.75;
 }
 
-.searchBar-6Kv8R2 {
+.searchBar-3TnChZ {
   padding: 0 5px;
 }
 
-.searchBarComponent-32dTOx {
+.searchBarComponent-3N7dCG {
   text-align: center !important;
 }
-.searchBarComponent-32dTOx::before {
+.searchBarComponent-3N7dCG::before {
   content: "􀊫";
   font-family: "SF Pro Text", "SF Pro";
   font-size: 90%;
@@ -227,135 +237,134 @@ Key:
 }
 
 /* make the title bar white to match Big Sur */
-.app-focused .container-1r6BKw.container-1r6BKw,
-.app-focused .searchBar-6Kv8R2,
-.app-focused .header-2V-4Sw,
-.app-focused .hasBanner-2SrLR3 .header-2V-4Sw, /* specificity hack */
-.app-focused .typeMacOS-3EmCyP.titleBar-AC4pGV,
-.app-focused .bannerVisible-2ZE_qG,
-.app-focused .panels-j1Uci_ > * {
+.app-focused .container-ZMc96U.container-ZMc96U,
+.app-focused .searchBar-3TnChZ,
+.app-focused .header-3OsQeK,
+.app-focused .hasBanner-2IrYih .header-3OsQeK, /* specificity hack */
+.app-focused .typeMacOS-3V4xXE.titleBar-1it3bQ,
+.app-focused .bannerVisible-Vkyg1I,
+.app-focused .panels-3wFtMD > * {
   background: var(--background-primary);
 }
 
-.header-2V-4Sw {
+.header-3OsQeK {
   transition: none; /* fix crossfade when switching apps */
 }
 
 /* divider between channel list and main body */
-.sidebar-2K8pFh,
-.guilds-1SWlCJ,
-.titleBar-AC4pGV,
-.threadSidebarOpen-vdkwIh {
+.sidebar-1tnWFu,
+.guilds-2JjMmN,
+.titleBar-1it3bQ,
+.threadSidebarOpen-1LSXvU {
   border-right: 0.5px solid var(--background-tertiary);
 }
 
 /* always show top controls in voice channel */
-.topControls-KKImPZ {
+.topControls-23RE3h {
   transform: none !important;
   opacity: 1 !important;
 }
 
 /* highlight icons on hover */
-.toolbar-1t6TWx .iconWrapper-2OrFZ1 {
+.toolbar-3_r2xA .iconWrapper-2awDjA {
   padding: 3px;
   margin: 0 4px;
   height: 30px;
   border-radius: 5px;
 }
-.toolbar-1t6TWx .iconWrapper-2OrFZ1:hover {
+.toolbar-3_r2xA .iconWrapper-2awDjA:hover {
   background: var(--background-modifier-selected);
 }
 
 /* make shadow consistent across title bar */
-.content-yTz4x3::before {
+.content-1jQy2l::before {
   top: -38px;
   height: 38px;
 }
 
 /* tweaks to fancy header image in special servers */
-.hasBanner-2SrLR3 .header-2V-4Sw {
+.hasBanner-2IrYih .header-3OsQeK {
   box-shadow: var(--elevation-low);
 }
-.bannerImage-3KhIJ6:before {
+.bannerImage-ubW8K-::before {
   display: none;
 }
 
-.app-focused .hasBanner-2SrLR3 .header-2V-4Sw {
+.app-focused .hasBanner-2IrYih .header-3OsQeK {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12.5px) saturate(180%);
 }
-.theme-dark.app-focused .hasBanner-2SrLR3 .header-2V-4Sw {
+.theme-dark.app-focused .hasBanner-2IrYih .header-3OsQeK {
   background: rgba(0, 0, 0, 0.4);
 }
-.theme-dark .bannerImage-3KhIJ6 {
+.theme-dark .bannerImage-ubW8K- {
   filter: brightness(0.8);
 }
 
-.theme-light .bannerVisible-2ZE_qG .header-2V-4Sw {
+.theme-light .bannerVisible-Vkyg1I .header-3OsQeK {
   color: inherit;
   filter: none;
 }
 
 /* tweaks to thread sidebar */
-.threadSidebar-1o3BTy,
-.threadSidebarOpen-vdkwIh {
+.container-3XgAHv,
+.threadSidebarOpen-1LSXvU {
   border-radius: 0 !important;
 }
-.threadSidebar-1o3BTy {
+.container-3XgAHv {
   margin-left: 0;
 }
-.threadSidebar-1o3BTy .toolbar-1t6TWx {
+.container-3XgAHv .toolbar-3_r2xA {
   order: -1;
   flex-direction: row-reverse;
 }
 
 /* disable cursor: pointer; */
-.header-2V-4Sw,
-.clickable-3rdHwn,
-.tab-ck0077,
-.button-1-5Aqk,
-.mainContent-u_9PKf,
-.clickable-536fPF,
-.app-2rEoOp button,
-.wrapper-25eVIn,
-.folder-2w6LX1,
-.circleIconButton-1QV--U,
-.button-1ZiXG9,
-.item-1tOPte,
-.buttonWrapper-1ZmCpA,
-.peopleListItem-2nzedh,
-.peopleListItem-2nzedh,
-.actionButton-uPB8Fs,
-.interactive-3B9GmY,
-.channel-2QD9_O,
-.channel-2QD9_O > *,
-.cursorPointer-1j7DL8,
-.item-PXvHYJ,
-.clickable-1JJAn8:hover .layout-2DM8Md,
-.actionIcon-PgcMM2 {
+.header-3OsQeK,
+.clickable-ZD7xvu,
+.tab-TRrPC8,
+.button-1_oXub,
+.mainContent-20q_Hp,
+.clickable-2AoIYN,
+button,
+.wrapper-38slSD,
+.folder-241Joy,
+.circleIconButton-1VxDrg,
+.button-3bklZh,
+.item-1OdjEX,
+.buttonWrapper-3YFQGJ,
+.peopleListItem-u6dGxF,
+.actionButton-3-B2x-,
+.interactive-2zD88a,
+.channel-1Shao0,
+.channel-1Shao0 > *,
+.cursorPointer-3JF56F,
+.item-3XjbnG,
+.clickable-28SzVr:hover .layout-1qmrhw,
+.actionIcon-2sw4Sl {
   cursor: default !important;
 }
-.closeButton-2GCmT5,
+.closeButton-mupH76,
 .lookLink-9FtZy- {
   cursor: pointer !important;
 }
 
-.wrapper-PY0fhH:hover .name-3l27Hl,
-.privateChannelsHeaderContainer-3NB1K1:hover {
+.channel-1Shao0:hover,
+.privateChannelsHeaderContainer-1UWASm:hover {
   color: var(--channels-default) !important;
 }
 
 /* native-like menus */
-.item-1tOPte {
+.item-1OdjEX {
   border-radius: 4px;
 }
 
-.menu-3sdvDG {
+.menu-1QACrS {
   border-radius: 6px;
   /* backdrop-filter: blur(17.5px); */
   /* animation: none !important; */
 }
-.scroller-3BxosC {
+.scroller-1bVxF5 {
   padding: 4px 6px;
 }
 
