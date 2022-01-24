@@ -13,6 +13,7 @@ module.exports = class SubtleDevicePrompt {
   load() {
     this.modalModule = BdApi.findModuleByProps("openModalLazy", "updateModal");
   }
+
   start() {
     this.cancelPatch = BdApi.monkeyPatch(this.modalModule, "openModalLazy", {
       async instead(patch) {
