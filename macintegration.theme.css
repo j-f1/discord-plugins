@@ -1,6 +1,6 @@
 /**
  * @name MacIntegration
- * @version 1.4.1
+ * @version 1.4.2
  * @description Aligns some parts of Discord's UI with the macOS HIG
  * @author Jed Fox
  * @authorLink https://jedfox.com
@@ -11,6 +11,7 @@
 
 /*
 Key:
+.container-1eFtFS: top level container, below modals etc
 .searchBar-3TnChZ: "Find or start a conversation" on homepage
 .searchBarComponent-3N7dCG: contents of that button/text field
 .header-3OsQeK: server name header
@@ -74,7 +75,6 @@ Key:
 .bannerImage-ubW8K-::before: a gradient overlay for that image
 .bannerVisible-Vkyg1I: added when the above-mentioned image is present
 .hasBanner-2IrYih: added when the banner image is present and not scrolled away
-.typeMacOS-3V4xXE: wrapper for window buttons, presumably only on macOS
 .titleBar-1it3bQ: wrapper for window buttons
 .panel-2ZFCRb: screen sharing panel above user area
 */
@@ -91,7 +91,8 @@ Key:
 .container-ZMc96U,
 .searchBar-3TnChZ,
 .macButtons-eIdy0e,
-.header-3OsQeK {
+.header-3OsQeK,
+.container-1eFtFS::before {
   height: 38px;
 }
 
@@ -99,13 +100,18 @@ Key:
   margin-top: 38px !important;
   z-index: 1;
 }
-.titleBar-1it3bQ {
+.container-1eFtFS::before {
+  content: "";
   padding-left: 2px;
   box-shadow: var(--elevation-low);
   box-sizing: border-box;
-  width: 73px !important;
+  width: 73px;
+  display: block;
   z-index: 2;
   clip-path: inset(0 0 -10px 0); /* clip horizontal shadow */
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .scroller-3X7KbA {
   padding-top: 12px !important;
@@ -296,7 +302,7 @@ Key:
 .searchBar-3TnChZ,
 .header-3OsQeK,
 .hasBanner-2IrYih .header-3OsQeK, /* specificity hack */
-.typeMacOS-3V4xXE.titleBar-1it3bQ,
+.container-1eFtFS::before,
 .app-focused .panels-3wFtMD > *,
 .bannerVisible-Vkyg1I,
 :root:not(.app-focused) .panels-3wFtMD > * {
@@ -357,7 +363,7 @@ Key:
 .app-focused .searchBar-3TnChZ,
 .app-focused .header-3OsQeK,
 .app-focused .hasBanner-2IrYih .header-3OsQeK, /* specificity hack */
-.app-focused .typeMacOS-3V4xXE.titleBar-1it3bQ,
+.app-focused .container-1eFtFS::before,
 .app-focused .bannerVisible-Vkyg1I,
 .app-focused .panels-3wFtMD > * {
   background: var(--background-primary);
@@ -370,7 +376,7 @@ Key:
 /* divider between channel list and main body */
 .sidebar-1tnWFu,
 .guilds-2JjMmN,
-.titleBar-1it3bQ,
+.container-1eFtFS::before,
 .threadSidebarOpen-1LSXvU {
   border-right: 0.5px solid var(--background-tertiary);
 }
