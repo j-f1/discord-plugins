@@ -1,7 +1,7 @@
 /**
  * @name SubtleDevicePrompt
  *
- * @version 1.1.0
+ * @version 1.1.1
  * @description Replace the dialog when connecting a new audio device with a minimal card
  * @author Jed Fox
  * @authorId 706842348239323199
