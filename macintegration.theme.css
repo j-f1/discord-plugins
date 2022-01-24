@@ -19,7 +19,17 @@ Key:
 .guilds-2JjMmN: servers sidebar
 .item-3XjbnG.themed-2-lozF: online/all/pending/blocked tabs
 .item-3XjbnG: friends toolbar tabs
+.title-31SJ6t: channel header (also has the class below)
 .children-3xh0VB: wraps channel title
+.title-17SveM: channel title
+.divider-q3P9HC: line between channel title and topic
+.topic-11NuQZ: topic
+.status-12NUUC: DM status
+.akaBadge-3i7V3p: DM AKA badge
+.nicknames-10Sg6e: DM nickname list
+.followButton-1N-GGp: follow button on announcement channels
+.caret-1le2LN: thread caret in title bar
+.parentChannelName-R4UlaT: thread parent channel in title bar
 .scroller-3X7KbA: server list scroll view
 .scroller-WSmht3: friends/dms list scroll view
 [class^="strikethrough"]: red slash across icon
@@ -111,6 +121,111 @@ Key:
   margin: 0;
   margin-right: 2px;
   margin-top: 2px;
+}
+
+/* title bar: move description to second row */
+:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB) {
+  display: grid;
+  grid-template-columns: auto auto auto 1fr;
+  transform: translateY(-1.5px);
+}
+
+/* hashtag icon */
+:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
+  .iconWrapper-2awDjA {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  margin-left: 0;
+}
+/* shift chats with title */
+:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
+  .iconWrapper-2awDjA:not(:nth-last-child(3)),
+:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
+  .title-17SveM[role="button"]:nth-last-child(3),
+:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
+  .status-12NUUC:nth-last-child(2) {
+  transform: translateY(1.5px);
+}
+
+:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
+  .iconWrapper-2awDjA
+  ~ .iconWrapper-2awDjA {
+  grid-column: 2;
+  grid-row: 2;
+  height: 16px;
+  margin-right: 2px;
+}
+
+:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
+  .iconWrapper-2awDjA
+  ~ .iconWrapper-2awDjA
+  svg {
+  width: 14px;
+  height: 14px;
+  margin-top: 0;
+}
+
+:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
+  .title-17SveM,
+:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
+  .title-17SveM
+  ~ .title-17SveM:last-child {
+  grid-column: 2 / span 2;
+  grid-row: 1;
+}
+/* fix layout when there’s no topic */
+:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
+  .title-17SveM:last-child {
+  grid-row: 1 / span 2;
+}
+
+:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
+  .status-12NUUC {
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: start;
+}
+
+.divider-q3P9HC,
+.caret-1le2LN {
+  display: none;
+}
+
+.akaBadge-3i7V3p {
+  grid-column: 2;
+  grid-row: 2;
+  margin-left: 0;
+  font-size: 8px;
+  height: 10px;
+  min-height: 10px;
+  line-height: 10px;
+  padding: 0 3px;
+  background-color: var(--background-tertiary);
+}
+
+.nicknames-10Sg6e,
+:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
+  .title-17SveM.parentChannelName-R4UlaT {
+  grid-column: 3 / span 2;
+  grid-row: 2;
+}
+
+.topic-11NuQZ {
+  grid-column: 2 / span 3;
+  grid-row: 2;
+  margin-left: 0;
+}
+
+.nicknames-10Sg6e,
+.topic-11NuQZ,
+.parentChannelName-R4UlaT {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.followButton-1N-GGp {
+  grid-column: 5;
+  grid-row: 1 / span 2;
 }
 
 /* friends tab bar */
