@@ -470,6 +470,19 @@ button,
   color: var(--channels-default) !important;
 }
 
+.channel-1Shao0.highlighted-3PcOfB::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--bdfdb-blurple);
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  right: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 /* native-like menus */
 /* credit: @TheCommieAxolotl https://github.com/TheCommieAxolotl/BetterDiscord-Stuff/blob/4f0327c270727639b402752ab2a37c267bcf9ada/OSX/OSX.css#L205-L221 */
 .menu-1QACrS {
