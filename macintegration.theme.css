@@ -1,6 +1,6 @@
 /**
  * @name MacIntegration
- * @version 1.4.2
+ * @version 1.4.3
  * @description Aligns some parts of Discord's UI with the macOS HIG
  * @author Jed Fox
  * @authorLink https://jedfox.com
@@ -77,6 +77,9 @@ Key:
 .hasBanner-2IrYih: added when the banner image is present and not scrolled away
 .titleBar-1it3bQ: wrapper for window buttons
 .panel-2ZFCRb: screen sharing panel above user area
+.submenuPaddingContainer-_k62dJ: wraps submenus
+.notice-2HEN-u: “viewing server as [role]” notice (and other things? idk)
+.content-1SgpWY: wrapper for everything to the right of the server list
 */
 
 /* font */
@@ -515,8 +518,32 @@ button,
 
 .scroller-1bVxF5 {
   padding: 4px 6px;
+  margin-right: -2px;
 }
 
 /* .modeSelected-346R90 .content-1x5b-n, .modeSelected-346R90:hover .content-1x5b-n {
   background: blue !important;
 } */
+
+/* menus */
+.submenuPaddingContainer-_k62dJ {
+  padding-left: 0;
+  margin-top: -6px;
+}
+.item-1OdjEX {
+  border-radius: 5px;
+}
+
+/* notice */
+
+.notice-2HEN-u {
+  border-radius: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.notice-2HEN-u + .content-1SgpWY {
+  margin-bottom: 40px;
+}
