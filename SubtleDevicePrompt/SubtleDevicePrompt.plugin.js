@@ -11,18 +11,14 @@
 
 module.exports = class SubtleDevicePrompt {
   load() {
-    this.modalModule = BdApi.findModuleByProps("openModal", "updateModal");
+    this.modalModule = BdApi.findModuleByProps("openModalLazy", "updateModal");
   }
   start() {
-    this.cancelPatch = BdApi.monkeyPatch(this.modalModule, "openModal", {
-      instead(patch) {
-        const [
-          /** @type {(props: unknown) => ReactNode} */ build,
-          /** @type {{ modalKey?: string, onCloseRequest?: any, onCloseCallback?: any }} */ opts,
-          /** @type {string} */ context,
-        ] = patch.methodArguments;
+    this.cancelPatch = BdApi.monkeyPatch(this.modalModule, "openModalLazy", {
+      async instead(patch) {
+        const component = await patch.methodArguments[0]()
 
-        const element = patch.methodArguments[0]({
+        const element = component({
           onClose: () => {},
           transitionState: null,
         });
@@ -66,7 +62,7 @@ module.exports = class SubtleDevicePrompt {
 
             // HTML cloned from the “voice connected” card
             const root = document.createElement("div");
-            root.className = "container-1giJp5";
+            root.className = "container-1zzFcN";
             root.style.display = "flex";
             root.style.flexDirection = "column";
 
@@ -84,7 +80,7 @@ module.exports = class SubtleDevicePrompt {
             closeButton.type = "button";
             // from mute/deafen buttons
             closeButton.className =
-              "button-14-BFJ enabled-2cQ-u7 lookBlank-3eh9lL";
+              "bubutton-12Fmur enabled-9OeuTA button-f2h6uQ lookBlank-21BCro";
             closeButton.style.padding = "0";
             closeButton.onclick = () => root.remove();
             // from the close button when clicking the server name
@@ -101,20 +97,20 @@ module.exports = class SubtleDevicePrompt {
             deviceName.textContent = element.props.device.displayName;
             // from the channel name of the voice card
             deviceName.className =
-              "size12-3cLvbJ subtext-3CDbHg channel-1TmDQ6";
+              "size12-oc4dx4 subtext-2HDqJ7 channel-3prF2u";
             deviceName.style.paddingBottom = "4px";
             deviceName.style.textDecoration = "none";
             headingTextPart.appendChild(deviceName);
 
             // from video/screenshare buttons
             const buttonBar1 = document.createElement("div");
-            buttonBar1.className = "actionButtons-14eAc_";
+            buttonBar1.className = "actionButtons-2vEOUh";
             buttonBar1.style.paddingBottom = "4px";
             root.appendChild(buttonBar1);
             const cancelButton = document.createElement("button");
             cancelButton.type = "button";
             cancelButton.className =
-              "button-1YfofB buttonColor-7qQbGO button-38aScr lookFilled-1Gx00P colorBrand-3pXr91 sizeSmall-2cSMqn grow-q77ONN";
+              "button-1EGGcP buttonColor-3bP3fX button-f2h6uQ lookFilled-yCfaCM colorBrand-I6CyqQ sizeSmall-wU2dO- grow-2sR_-F";
             cancelButton.textContent = closeButtonText;
             cancelButton.onclick = () => {
               onClose();
@@ -123,14 +119,14 @@ module.exports = class SubtleDevicePrompt {
             buttonBar1.appendChild(cancelButton);
 
             const buttonBar2 = document.createElement("div");
-            buttonBar2.className = "actionButtons-14eAc_";
+            buttonBar2.className = "actionButtons-2vEOUh";
             root.appendChild(buttonBar2);
             const acceptButton = document.createElement("button");
             acceptButton.type = "button";
             acceptButton.style.flexGrow = "1";
             // .button-1YfofB removed to make it pop
             acceptButton.className =
-              "buttonColor-7qQbGO button-38aScr lookFilled-1Gx00P colorBrand-3pXr91 sizeSmall-2cSMqn grow-q77ONN";
+              "button-1EGGcP button-f2h6uQ lookFilled-yCfaCM colorBrand-I6CyqQ sizeSmall-wU2dO- grow-2sR_-F";
             acceptButton.textContent = acceptButtonText;
             acceptButton.onclick = () => {
               onAccept();
@@ -142,8 +138,9 @@ module.exports = class SubtleDevicePrompt {
               "var(--brand-experiment, var(--brand))";
             root.style.transition = "background-color 1s";
 
+            // parent of voice connected card
             document
-              .querySelector(".wrapper-24pKcD")
+              .querySelector(".wrapper-3Hk9OB")
               .insertAdjacentElement("afterbegin", root);
             setTimeout(() => (root.style.backgroundColor = ""), 250);
           } catch (e) {
