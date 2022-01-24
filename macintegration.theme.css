@@ -356,15 +356,29 @@ button,
 }
 
 /* native-like menus */
-.item-1OdjEX {
-  border-radius: 4px;
+/* credit: @TheCommieAxolotl https://github.com/TheCommieAxolotl/BetterDiscord-Stuff/blob/4f0327c270727639b402752ab2a37c267bcf9ada/OSX/OSX.css#L205-L221 */
+.menu-1QACrS {
+  background: #ececedc0;
+  min-width: 240px;
+}
+.theme-dark .menu-1QACrS {
+  background: #26262bb4;
 }
 
-.menu-1QACrS {
-  border-radius: 6px;
-  /* backdrop-filter: blur(17.5px); */
-  /* animation: none !important; */
+.menu-1QACrS::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  backdrop-filter: blur(20px);
+  border-radius: 7px;
+  position: absolute;
+  box-shadow: inset 0 0 0 1px #bfbfc1;
 }
+.theme-dark .menu-1QACrS::before {
+  box-shadow: inset 0 0 0 1px #fff3;
+}
+
 .scroller-1bVxF5 {
   padding: 4px 6px;
 }
