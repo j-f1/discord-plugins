@@ -149,7 +149,8 @@ Key:
 .wrapper-3Hk9OB:not(empty):first-child,
 .wrapper-3Hk9OB:empty + .container-YkUktl > *,
 .wrapper-3Hk9OB:not(empty):first-child > *,
-.panel-2ZFCRb, .panel-2ZFCRb > * {
+.panel-2ZFCRb,
+.panel-2ZFCRb > * {
   transform: scaleY(-1);
 }
 .panel-2ZFCRb {
