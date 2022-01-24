@@ -127,6 +127,7 @@ Key:
 :is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB) {
   display: grid;
   grid-template-columns: auto auto auto 1fr;
+  grid-template-rows: 1fr auto;
   transform: translateY(-1.5px);
 }
 
@@ -139,11 +140,14 @@ Key:
 }
 /* shift chats with title */
 :is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
-  .iconWrapper-2awDjA:not(:nth-last-child(3)),
-:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
   .title-17SveM[role="button"]:nth-last-child(3),
 :is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
   .status-12NUUC:nth-last-child(2) {
+  transform: translateY(0.5px);
+}
+
+:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
+  .iconWrapper-2awDjA {
   transform: translateY(1.5px);
 }
 
@@ -172,11 +176,6 @@ Key:
   ~ .title-17SveM:last-child {
   grid-column: 2 / span 2;
   grid-row: 1;
-}
-/* fix layout when there’s no topic */
-:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
-  .title-17SveM:last-child {
-  grid-row: 1 / span 2;
 }
 
 :is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
@@ -226,6 +225,7 @@ Key:
 .followButton-1N-GGp {
   grid-column: 5;
   grid-row: 1 / span 2;
+  transform: translateY(1.5px);
 }
 
 /* friends tab bar */
