@@ -1,6 +1,6 @@
 /**
  * @name MacIntegration
- * @version 1.4.3
+ * @version 1.4.4
  * @description Aligns some parts of Discord's UI with the macOS HIG
  * @author Jed Fox
  * @authorLink https://jedfox.com
@@ -80,6 +80,9 @@ Key:
 .submenuPaddingContainer-_k62dJ: wraps submenus
 .notice-2HEN-u: “viewing server as [role]” notice (and other things? idk)
 .content-1SgpWY: wrapper for everything to the right of the server list
+.boostedGuildTierIconBackgroundWithVisibleBanner-2KrNB1: the background around the shield gem in the title bar
+.boostedGuildTierIconWithVisibleBanner-3XawD_: the shield gem in the title bar
+.verified-1Jv_7P: the verified server badge in the title bar
 */
 
 /* font */
@@ -424,6 +427,16 @@ Key:
 }
 .theme-dark .bannerImage-ubW8K- {
   filter: brightness(0.8);
+}
+
+.boostedGuildTierIconBackgroundWithVisibleBanner-2KrNB1 {
+  color: var(--background-accent);
+}
+.boostedGuildTierIconWithVisibleBanner-3XawD_ {
+  color: #fff;
+}
+.verified-1Jv_7P {
+  color: hsl(139, calc(var(--saturation-factor, 1) * 47.3%), 43.9%);
 }
 
 .theme-light .bannerVisible-Vkyg1I .header-3OsQeK {
