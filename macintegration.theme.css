@@ -83,6 +83,8 @@ Key:
 .boostedGuildTierIconBackgroundWithVisibleBanner-2KrNB1: the background around the shield gem in the title bar
 .boostedGuildTierIconWithVisibleBanner-3XawD_: the shield gem in the title bar
 .verified-1Jv_7P: the verified server badge in the title bar
+.communityInfoVisible-3zc5_s: applied to the title bar when the community info badge is visible
+.communityInfoContainer-1dMVpU: the public badge below the title bar
 */
 
 /* font */
@@ -377,6 +379,7 @@ Key:
 
 .header-3OsQeK {
   transition: none; /* fix crossfade when switching apps */
+  padding-block: 6px 12px;
 }
 
 /* divider between channel list and main body */
@@ -410,10 +413,15 @@ Key:
   height: 38px;
 }
 
-/* tweaks to fancy header image in special servers */
-.hasBanner-2IrYih .header-3OsQeK {
-  box-shadow: var(--elevation-low);
+.header-3OsQeK {
+  box-shadow: var(--elevation-low) !important;
 }
+
+.communityInfoVisible-3zc5_s .communityInfoContainer-1dMVpU {
+  margin-top: 8px;
+}
+
+/* tweaks to fancy header image in special servers */
 .bannerImage-ubW8K-::before {
   display: none;
 }
