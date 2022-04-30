@@ -16,7 +16,8 @@ Key:
 .searchBarComponent-3N7dCG: contents of that button/text field
 .header-3OsQeK: server name header
 .container-ZMc96U: main title bar/toolbar with channel name
-.macButtons-eIdy0e: window buttons
+.macButtons-eIdy0e: window buttons (removed?)
+.macDragRegion-3RTnKp: background behind window buttons
 .guilds-2JjMmN: servers sidebar
 .item-3XjbnG.themed-2-lozF: online/all/pending/blocked tabs
 .item-3XjbnG: friends toolbar tabs
@@ -102,6 +103,10 @@ Key:
 .header-3OsQeK,
 .container-1eFtFS::before {
   height: 38px;
+}
+
+.macDragRegion-3RTnKp {
+  padding-bottom: 38px;
 }
 
 .guilds-2JjMmN {
