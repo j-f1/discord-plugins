@@ -32,6 +32,7 @@ Key:
 .followButton-1N-GGp: follow button on announcement channels
 .caret-1le2LN: thread caret in title bar
 .parentChannelName-R4UlaT: thread parent channel in title bar
+.titleWrapper-24Kyzc: wrapper for thread parent channel in title bar
 .scroller-3X7KbA: server list scroll view
 .scroller-WSmht3: friends/dms list scroll view
 [class^="strikethrough"]: red slash across icon
@@ -152,7 +153,7 @@ Key:
 
 /* hashtag icon */
 :is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
-  .iconWrapper-2awDjA {
+  .iconWrapper-2awDjA:is(:nth-last-child(3), :nth-last-child(6), :nth-last-child(5)) {
   grid-column: 1;
   grid-row: 1 / span 2;
   margin-left: 0;
@@ -171,28 +172,33 @@ Key:
 }
 
 :is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
-  .iconWrapper-2awDjA
-  ~ .iconWrapper-2awDjA {
+  .iconWrapper-2awDjA:not(:nth-last-child(3)):not(:nth-last-child(6)):not(:nth-last-child(5)) {
   grid-column: 2;
   grid-row: 2;
   height: 16px;
+  margin-left: 0;
   margin-right: 2px;
 }
 
 :is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
-  .iconWrapper-2awDjA
-  ~ .iconWrapper-2awDjA
+  .iconWrapper-2awDjA:not(:nth-last-child(3)):not(:nth-last-child(6)):not(:nth-last-child(5))
   svg {
   width: 14px;
   height: 14px;
   margin-top: 0;
 }
 
+.nicknames-10Sg6e,
+:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
+  .titleWrapper-24Kyzc:not(:last-child):not(:nth-last-child(3)):not(:nth-last-child(4)) {
+  grid-column: 3 / span 2;
+  grid-row: 2;
+}
+
 :is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
   .title-17SveM,
 :is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
-  .title-17SveM
-  ~ .title-17SveM:last-child {
+  .titleWrapper-24Kyzc:last-child {
   grid-column: 2 / span 2;
   grid-row: 1;
 }
@@ -219,13 +225,6 @@ Key:
   line-height: 10px;
   padding: 0 3px;
   background-color: var(--background-tertiary);
-}
-
-.nicknames-10Sg6e,
-:is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
-  .title-17SveM.parentChannelName-R4UlaT {
-  grid-column: 3 / span 2;
-  grid-row: 2;
 }
 
 .topic-11NuQZ {
