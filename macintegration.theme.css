@@ -87,6 +87,7 @@ Key:
 .verified-1Jv_7P: the verified server badge in the title bar
 .communityInfoVisible-3zc5_s: applied to the title bar when the community info badge is visible
 .communityInfoContainer-1dMVpU: the public badge below the title bar
+.avatarWrapper-1B9FTW: name/avatar lockup at the bottom of the channel list
 */
 
 /* font */
@@ -581,4 +582,9 @@ button,
 
 .notice-2HEN-u + .content-1SgpWY {
   margin-bottom: 40px;
+}
+
+/* move mute/deafen icons to the right */
+.avatarWrapper-1B9FTW {
+  flex-grow: 1;
 }
