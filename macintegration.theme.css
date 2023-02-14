@@ -153,7 +153,11 @@ Key:
 
 /* hashtag icon */
 :is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
-  .iconWrapper-2awDjA:is(:nth-last-child(3), :nth-last-child(6), :nth-last-child(5)) {
+  .iconWrapper-2awDjA:is(
+    :nth-last-child(3),
+    :nth-last-child(6),
+    :nth-last-child(5)
+  ) {
   grid-column: 1;
   grid-row: 1 / span 2;
   margin-left: 0;
@@ -172,7 +176,9 @@ Key:
 }
 
 :is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
-  .iconWrapper-2awDjA:not(:nth-last-child(3)):not(:nth-last-child(6)):not(:nth-last-child(5)) {
+  .iconWrapper-2awDjA:not(:nth-last-child(3)):not(:nth-last-child(6)):not(
+    :nth-last-child(5)
+  ) {
   grid-column: 2;
   grid-row: 2;
   height: 16px;
@@ -181,7 +187,9 @@ Key:
 }
 
 :is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
-  .iconWrapper-2awDjA:not(:nth-last-child(3)):not(:nth-last-child(6)):not(:nth-last-child(5))
+  .iconWrapper-2awDjA:not(:nth-last-child(3)):not(:nth-last-child(6)):not(
+    :nth-last-child(5)
+  )
   svg {
   width: 14px;
   height: 14px;
@@ -190,7 +198,9 @@ Key:
 
 .nicknames-10Sg6e,
 :is(.title-31SJ6t.children-3xh0VB, .title-31SJ6t .children-3xh0VB)
-  .titleWrapper-24Kyzc:not(:last-child):not(:nth-last-child(3)):not(:nth-last-child(4)) {
+  .titleWrapper-24Kyzc:not(:last-child):not(:nth-last-child(3)):not(
+    :nth-last-child(4)
+  ) {
   grid-column: 3 / span 2;
   grid-row: 2;
 }
