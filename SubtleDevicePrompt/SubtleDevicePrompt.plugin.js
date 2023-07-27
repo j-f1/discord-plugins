@@ -17,7 +17,7 @@ module.exports = class SubtleDevicePrompt {
   start() {
     this.cancelPatch = BdApi.monkeyPatch(this.modalModule, "openModalLazy", {
       async instead(patch) {
-        const component = await patch.methodArguments[0]()
+        const component = await patch.methodArguments[0]();
 
         const element = component({
           onClose: () => {},
